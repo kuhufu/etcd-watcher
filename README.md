@@ -4,6 +4,8 @@ based on etcd [clientv3](https://github.com/etcd-io/etcd/tree/master/clientv3)
 
 Etcd Watcher is the [Etcd](https://github.com/coreos/etcd) watcher for [Casbin](https://github.com/casbin/casbin). With this library, Casbin can synchronize the policy with the database in multiple enforcer instances.
 
+源项目很久没更新而且包依赖也出现了问题，fork之后处理了包依赖的问题，并使用etcd的clientv3重写
+
 ## Installation
 
     go get github.com/kuhufu/etcd3-watcher
