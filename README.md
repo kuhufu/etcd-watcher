@@ -15,7 +15,7 @@ package main
 import (
     "github.com/casbin/casbin"
     "log"
-    "github.com/kuhufu/etcd-watcher"
+    etcdwatcher "github.com/kuhufu/etcd3-watcher"
 )
 
 func updateCallback(rev string) {
