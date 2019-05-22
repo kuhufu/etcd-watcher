@@ -5,7 +5,7 @@ Etcd Watcher is the [Etcd](https://github.com/coreos/etcd) watcher for [Casbin](
 
 ## Installation
 
-    go get github.com/casbin/etcd-watcher
+    go get github.com/kuhufu/etcd-watcher
 
 ## Simple Example
 
