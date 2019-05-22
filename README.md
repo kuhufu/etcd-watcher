@@ -14,12 +14,12 @@ package main
 
 import (
     "github.com/casbin/casbin"
-    "github.com/casbin/casbin/util"
-    "github.com/casbin/etcd-watcher"
+    "log"
+    "github.com/kuhufu/etcd-watcher"
 )
 
 func updateCallback(rev string) {
-    util.LogPrint("New revision detected:", rev)
+    log.Println("New revision detected:", rev)
 }
 
 func main() {

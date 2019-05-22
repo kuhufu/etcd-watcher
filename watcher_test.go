@@ -15,14 +15,15 @@
 package etcdwatcher
 
 import (
+	"log"
 	"testing"
+	"time"
 
 	"github.com/casbin/casbin"
-	"github.com/casbin/casbin/util"
 )
 
 func updateCallback(rev string) {
-	util.LogPrint("New revision detected:", rev)
+
 }
 
 func TestWatcher(t *testing.T) {
@@ -44,6 +45,22 @@ func TestWatcher(t *testing.T) {
 	// Now the listener's callback updateCallback() should be called,
 	// because it receives the notification of policy update.
 	// You should see "[New revision detected: X]" in the log.
+}
+func TestWatcher_Update(t *testing.T) {
+	updater := NewWatcher("http://127.0.0.1:2379")
+	err := updater.Update()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func TestWatcher_StartWatch(t *testing.T) {
+	w := NewWatcher("http://127.0.0.1:2379").(*Watcher)
+	w.SetUpdateCallback(func(s string) {
+		log.Println(s)
+	})
+
+	time.Sleep(time.Hour)
 }
 
 func TestWithEnforcer(t *testing.T) {
